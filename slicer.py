@@ -12,7 +12,7 @@ def calcAvgComplex1Mer(ecg,qrsMapped,complexSym):
     maxInx = qrsMapped.shape[0]
     while (build<1000000) and (i<(maxInx-2)):
         i+=1
-        if(qrs['form'][i] != complexSym):
+        if(qrsMapped['form'][i] != complexSym):
             continue
         build+=1
         inxStart = qrsMapped['Q'][i]
