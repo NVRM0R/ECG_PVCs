@@ -9,7 +9,7 @@ ecg = pd.read_csv("../datass.csv",names=["I","II","III"])
 qrs = pd.read_csv("../qrsss.csv",names=["Q","S","form"])
 
 start = 0
-stop =  2000
+stop =  200
 step = 1
 x = range(start,stop,step)
 ecg_1 = ecg["I"]
@@ -30,6 +30,7 @@ for i in range(stop):
     else:
         curCol = 'yellow'
     plt.axvspan(qrs['Q'][i], qrs['Q'][i+1], color=curCol, alpha=0.2)
+    
 plt.show()
 
 
