@@ -1,13 +1,15 @@
+#!/usr/bin/python3
+
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import matplotlib.pyplot as plt
 from slicer import calcAvgComplex1Mer
 
-ecg = pd.read_csv("dataS.csv",names=["I","II","III"])
-qrs = pd.read_csv("qrsS.csv")
+ecg = pd.read_csv("../datass.csv",names=["I","II","III"])
+qrs = pd.read_csv("../qrsss.csv",names=["Q","S","form"])
 
-start = 45000
-stop =  48000
+start = 0
+stop =  2000
 step = 1
 x = range(start,stop,step)
 ecg_1 = ecg["I"]
@@ -27,7 +29,7 @@ for i in range(stop):
         curCol = 'green'
     else:
         curCol = 'yellow'
-    plt.axvspan(qrs['Q'][i], qrs['S'][i], color=curCol, alpha=0.2)
+    plt.axvspan(qrs['Q'][i], qrs['Q'][i+1], color=curCol, alpha=0.2)
 plt.show()
 
 
